@@ -58,10 +58,11 @@ function InputPage() {
   const runInputCommand = (inputValue) => {
     const command = inputValue.split(" ")[0];
     console.log(command);
+    console.log(inputValue.split(" ")[1])
     if (command === "PLACE") {
       return place(
         dispatch,
-        inputValue.split(" ")[1],
+        inputValue,
         xLength,
         yLength,
         facingToward

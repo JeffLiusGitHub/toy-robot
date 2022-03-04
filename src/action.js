@@ -7,28 +7,43 @@ import {
 } from "./store/RobotSlice";
 import { setCommand, setError } from "./store/InfoSlice";
 
-export const place = (dispatch, input, xLength, yLength, facingToward) => {
-  console.log(input);
-  if (input === undefined) {
+export const place = (
+  dispatch,
+  inputCommand,
+  xLength,
+  yLength,
+  facingToward
+) => {
+  const inputValue = inputCommand.split(" ");
+  console.log(inputValue);
+  if (inputValue[2]) {
+    return dispatch(setError({ error: "do not add space before facing" }));
+  }
+  console.log(inputCommand);
+  if (inputValue[1] === undefined) {
     return dispatch(setError({ error: "please also enter axis and facing" }));
   }
-  const inputArray = input?.split(",");
+  const inputArray = inputValue[1]?.split(",");
   console.log(inputArray.length);
   if (inputArray.length !== 3) {
-    return dispatch(setError({ error: "should enter X,Y,and Facing, also notice input format." }));
+    return dispatch(
+      setError({
+        error: "should enter X,Y,and Facing, also notice input format.",
+      })
+    );
   }
   const axisX = parseInt(inputArray[0]?.trim());
   const axisY = parseInt(inputArray[1]?.trim());
   const facing = inputArray[2]?.toUpperCase().trim();
 
-  console.log({ axisX, axisY });
+  console.log({ facing });
   if (
     axisIsValid(dispatch, axisX, xLength) &&
     axisIsValid(dispatch, axisY, yLength) &&
     facingIsValid(dispatch, facing, facingToward)
   ) {
     // console.log(input)
-    dispatch(setCommand({ command: `PLACE ${input}` }));
+    dispatch(setCommand({ command: `PLACE ${inputValue[1]}` }));
     dispatch(placeRobot({ axisX, axisY, facing }));
   } else {
     console.log("the input error, please check your input");
