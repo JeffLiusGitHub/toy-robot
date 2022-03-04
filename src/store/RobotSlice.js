@@ -13,19 +13,13 @@ const robotSlice = createSlice({
       state.axisY = action.payload.axisY;
       state.facing = action.payload.facing;
     },
-
     rotateRobot: (state, action) => {
       state.facing = action.payload.facing;
     },
-
-    // turnRight: (state, action) => {
-    //   state.facing = action.payload.facing;
-    // },
     moveRobot: (state, action) => {
       state.axisX = action.payload.axisX;
       state.axisY = action.payload.axisY;
     },
-    reportRobot: (state, action) => {},
   },
 });
 

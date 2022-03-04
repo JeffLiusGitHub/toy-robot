@@ -1,29 +1,24 @@
 import React from "react";
-import direction from "../asset/direction.png";
+import compass from "../asset/Compass.png";
 import styled from "styled-components";
-const CampassTop = styled.div`
-  /* background-color: #fdf6f0; */
-  /* position: -webkit-sticky; */
-  position: absolute;
-`
-const CampassContainer = styled.div`
+
+const CompassContainer = styled.div`
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
-  position: -webkit-sticky;
   position: sticky;
-  /* position: relative; */
-  /* top: 40px;
-  left: 50px; */
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+  left: 30px;
+  top: 30px;
+
   animation-duration: 4s;
   animation-name: shake;
   animation-iteration-count: infinite;
   .img {
-
-    height: 80px;
-    width: 80px;
+    position: sticky;
+    position: relative;
+    z-index: 1;
+    height: 100px;
+    width: 100px;
   }
   @keyframes shake {
     0% {
@@ -56,13 +51,12 @@ const CampassContainer = styled.div`
   }
 `;
 
-const Campass = () => {
+const Compass = () => {
   return (
- 
-    <CampassContainer>
-      <img src={direction} alt="Campass"></img>
-    </CampassContainer>
+    <CompassContainer>
+      <img src={compass} alt="Campass"></img>
+    </CompassContainer>
   );
 };
 
-export default Campass;
+export default Compass;

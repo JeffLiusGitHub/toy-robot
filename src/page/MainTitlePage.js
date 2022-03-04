@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { mobile, tablet, laptopL, laptopXL } from "../responsive";
 import ExploreIcon from "@mui/icons-material/Explore";
-import SmartToyIcon from '@mui/icons-material/SmartToy';
+import SmartToyIcon from "@mui/icons-material/SmartToy";
 const MainTitleContainer = styled.div`
-  /* margin-top:30px; */
   padding-top: 60px;
 `;
 const Title = styled.div`
@@ -20,18 +19,22 @@ ${mobile({ fontSize: "20px" })}
 `;
 const IconContainer = styled.span`
   margin-left: 10px;
-  margin-right:10px;
+  margin-right: 10px;
 `;
 const MainTitlePage = () => {
   return (
     <MainTitleContainer>
       <Title>
-      <IconContainer>
-          <SmartToyIcon sx={{fontSize:{sm:'18px',md:"20px",lg:'35px'}}}></SmartToyIcon>
-        </IconContainer>  
+        <IconContainer>
+          <SmartToyIcon
+            sx={{ fontSize: { sm: "18px", md: "20px", lg: "35px" } }}
+          ></SmartToyIcon>
+        </IconContainer>
         Toy Robot simulator
         <IconContainer>
-          <ExploreIcon sx={{fontSize:{sm:'18px',md:"20px",lg:'35px'}}}></ExploreIcon>
+          <ExploreIcon
+            sx={{ fontSize: { sm: "18px", md: "20px", lg: "35px" } }}
+          ></ExploreIcon>
         </IconContainer>
       </Title>
     </MainTitleContainer>

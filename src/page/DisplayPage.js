@@ -1,7 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import Board from "../Component/Board";
-
 import styled from "styled-components";
 
 function DisplayPage() {
@@ -15,7 +13,7 @@ function DisplayPage() {
 
   return (
     <DisplayContainer>
-      <Board></Board>
+      <Board />
     </DisplayContainer>
   );
 }

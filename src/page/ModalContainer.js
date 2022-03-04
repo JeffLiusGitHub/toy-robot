@@ -1,6 +1,4 @@
-import { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
@@ -15,23 +13,17 @@ const style = {
   borderRadius: "3px",
   boxShadow: 24,
   p: 4,
-  overFlow: "scroll",
+  overflow: "visible",
 };
 
 const TypographyStyle = {
-
-  mt:{sm:0,md:2},
+  mt: { sm: 0, md: 2 },
   fontSize: { sx: "4px", sm: "15px", md: "20px" },
- 
 };
 
 const ModalContainer = ({ open, handleClose }) => {
-  // const [open, setOpen] = useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
   return (
     <div>
-      {/* <Button onClick={handleOpen} variant='contained' sx={{backgroundColor:'#019267'}}>Click to see the Game Instruction</Button> */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -50,62 +42,33 @@ const ModalContainer = ({ open, handleClose }) => {
           >
             Details
           </Typography>
-
-          <Typography
-            id="modal-modal-description"
-            sx={TypographyStyle}
-          >
+          <Typography id="modal-modal-description" sx={TypographyStyle}>
             The application is a simulation of a toy robot moving on a square
             tabletop, of dimensions 5 units x 5 units. There are no other
             obstructions on the table surface.
-            </Typography>
-            {/* <Typography
-              id="modal-modal-description"
-              sx={TypographyStyle}
-            >
-              * The robot is free to roam around the surface of the table.
-            </Typography>
-            */}
-            <Typography
-              id="modal-modal-description"
-              sx={TypographyStyle}
-            >
-              The first valid command to the robot is a PLACE command, after
-              that, any sequence of commands may be issued, in any order,
-              including another PLACE command. The application should discard
-              all commands in the sequence until a valid PLACE command has been
-              executed.
-            </Typography>
-            <Typography
-              id="modal-modal-description"
-              sx={TypographyStyle}
-            >
-              MOVE will move the toy robot one unit forward in the direction it
-              is currently facing.
-            </Typography>
-            <Typography
-              id="modal-modal-description"
-              sx={TypographyStyle}
-            >
-              LEFT and RIGHT will rotate the robot 90 degrees in the specified
-              direction without changing the position of the robot.
-            </Typography>
-            <Typography
-              id="modal-modal-description"
-              sx={TypographyStyle}
-            >
-              REPORT will announce the X,Y and orientation of the robot. A robot
-              that is not on the table can choose to ignore the MOVE, LEFT,
-              RIGHT and REPORT commands.
-            </Typography>
-           
-            <Typography
-              id="modal-modal-description"
-              sx={TypographyStyle}
-            >
-              EG: PLACE 0,0,NORTH MOVE REPORT Output: 0,1,NORTH
-            </Typography>
-          
+          </Typography>
+          <Typography id="modal-modal-description" sx={TypographyStyle}>
+            The first valid command to the robot is a PLACE command, after that,
+            any sequence of commands may be issued, in any order, including
+            another PLACE command. The application should discard all commands
+            in the sequence until a valid PLACE command has been executed.
+          </Typography>
+          <Typography id="modal-modal-description" sx={TypographyStyle}>
+            MOVE will move the toy robot one unit forward in the direction it is
+            currently facing.
+          </Typography>
+          <Typography id="modal-modal-description" sx={TypographyStyle}>
+            LEFT and RIGHT will rotate the robot 90 degrees in the specified
+            direction without changing the position of the robot.
+          </Typography>
+          <Typography id="modal-modal-description" sx={TypographyStyle}>
+            REPORT will announce the X,Y and orientation of the robot. A robot
+            that is not on the table can choose to ignore the MOVE, LEFT, RIGHT
+            and REPORT commands.
+          </Typography>
+          <Typography id="modal-modal-description" sx={TypographyStyle}>
+            EG: PLACE 0,0,NORTH MOVE REPORT Output: 0,1,NORTH
+          </Typography>
         </Box>
       </Modal>
     </div>
