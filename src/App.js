@@ -1,4 +1,3 @@
-import "./App.css";
 import InputPage from "./page/InputPage";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -8,7 +7,6 @@ import styled from "styled-components";
 import IntroductionPage from "./page/IntroductionPage";
 import ModalContainer from "./page/ModalContainer";
 import OutputPage from "./page/OutputPage";
-// import Snackbars from "./Component/Snackbars";
 import { laptopXL, tablet, laptop, laptopL } from "./responsive";
 import MainTitlePage from "./page/MainTitlePage";
 const Container = styled.div`
@@ -34,8 +32,8 @@ const Left = styled.div`
 
 const Center = styled.div`
   width: 5%;
-${laptopXL({ display: "none" })}
-${laptopL({ width: "10%" })}
+  ${laptopXL({ display: "none" })}
+  ${laptopL({ width: "10%" })}
 ${laptop({ display: "none" })}
 ${tablet({ display: "none" })}
 `;
@@ -46,14 +44,14 @@ const Right = styled.div`
 `;
 
 function App() {
-  const boardSize = { xLength: 5, yLength: 5 };
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   useEffect(() => {
+    const boardSize = { xLength: 5, yLength: 5 };
     dispatch(setBoard(boardSize));
-  }, [boardSize, dispatch]);
+  }, [dispatch]);
 
   return (
     <div>

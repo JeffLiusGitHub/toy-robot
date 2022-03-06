@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Turtle from '../asset/Turtle.png'
 import {tablet,laptop,laptopL,laptopXL,wideScreen } from "../responsive";
+
 const Tile = styled.div`
   background-color: ${(props) => props.color};
   width:95%;
@@ -12,7 +13,6 @@ const Tile = styled.div`
   color: white;
   border-radius: 3px;
   font-size:30px;
-  
   ${wideScreen({  fontSize:"30px"})}
   ${laptopXL({fontSize:"25px"})}
   ${laptopL({fontSize:"20px"})}
@@ -32,11 +32,11 @@ const Tile = styled.div`
     );
   }
 `;
+
 const TileComponent = ({ facing, color, i, j, displayTurtle,xLength }) => {
   
   return (
-    <Tile facing={facing} color={color} xLength={xLength} >
-      
+    <Tile facing={facing} color={color} xLength={xLength} key={`${i}.${j}`} >      
       {displayTurtle ? (
         <img src={Turtle} alt="turtle"></img>
       ) : (

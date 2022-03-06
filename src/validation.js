@@ -18,7 +18,6 @@ export const axisIsValid = (dispatch, axis, length) => {
     //todo input already -1
   } else if (axis < 0 || axis > length - 1) {
     dispatch(setError({ error: "cannot put robot out of table" }));
-
     return false;
     //todo more condition to be judge (avoidance)
   } else {

@@ -9,7 +9,6 @@ const CompassContainer = styled.div`
   height: 70px;
   left: 30px;
   top: 30px;
-
   animation-duration: 4s;
   animation-name: shake;
   animation-iteration-count: infinite;
@@ -25,7 +24,6 @@ const CompassContainer = styled.div`
       -webkit-transform: scale(1);
       transform: scale(1);
     }
-
     20% {
       -webkit-transform: scale(0.9) rotate(-8deg);
       transform: scale(0.9) rotate(-8deg);
@@ -34,16 +32,14 @@ const CompassContainer = styled.div`
       -webkit-transform: scale(1);
       transform: scale(1);
     }
-    70% {
-      -webkit-transform: scale(1.5) rotate(8deg);
-      transform: scale(1.5) rotate(8deg);
-    }
-
     60% {
       -webkit-transform: scale(1.3) rotate(-8deg);
       transform: scale(1.3) rotate(-8deg);
     }
-
+    70% {
+      -webkit-transform: scale(1.5) rotate(8deg);
+      transform: scale(1.5) rotate(8deg);
+    }
     80% {
       -webkit-transform: scale(1) rotate(0);
       transform: scale(1) rotate(0);

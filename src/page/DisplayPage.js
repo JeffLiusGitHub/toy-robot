@@ -2,7 +2,6 @@ import React from "react";
 import Board from "../Component/Board";
 import styled from "styled-components";
 
-function DisplayPage() {
   const DisplayContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -10,6 +9,8 @@ function DisplayPage() {
     margin-top: 100px;
     height: 90%;
   `;
+function DisplayPage() {
+
 
   return (
     <DisplayContainer>

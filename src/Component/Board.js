@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-
 import TileComponent from "./TileComponent";
 import {
   mobile,
@@ -27,7 +26,7 @@ const BoardContainer = styled.div`
 const Board = () => {
   const { axisX, axisY, facing } = useSelector((state) => state.robot);
   const { xLength, yLength } = useSelector((state) => state.board);
-
+  
   let board = [];
   for (let j = xLength - 1; j >= 0; j--) {
     for (let i = 0; i < yLength; i++) {
@@ -39,13 +38,13 @@ const Board = () => {
       if (number % 2 === 0) {
         board.push(
           <TileComponent
+            key={`${i},${j}`}
             facing={facing}
             color="#F8E2CF"
             i={i}
             j={j}
             displayTurtle={displayTurtle}
             xLength={xLength}
-            key={`${i}+${j}`}
           ></TileComponent>
         );
       } else {
@@ -57,7 +56,7 @@ const Board = () => {
             j={j}
             displayTurtle={displayTurtle}
             xLength={xLength}
-            key={`${i}+${j}`}
+            key={`${i}.${j}`}
           ></TileComponent>
         );
       }

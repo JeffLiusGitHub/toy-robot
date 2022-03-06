@@ -11,11 +11,10 @@ const Title = styled.div`
   font-size: 50px;
   margin-bottom: 15px;
   text-align: center;
-
   ${laptopXL({ fontSize: "35px" })}
   ${laptopL({ fontSize: "30px" })}
-${tablet({ fontSize: "25px" })}
-${mobile({ fontSize: "20px" })}
+  ${tablet({ fontSize: "25px" })}
+  ${mobile({ fontSize: "20px" })}
 `;
 const IconContainer = styled.span`
   margin-left: 10px;
