@@ -27,13 +27,13 @@ const MainTitlePage = () => {
         <IconContainer>
           <SmartToyIcon
             sx={{ fontSize: { sm: "18px", md: "20px", lg: "35px" } }}
-          ></SmartToyIcon>
+          />
         </IconContainer>
         Toy Robot simulator
         <IconContainer>
           <ExploreIcon
             sx={{ fontSize: { sm: "18px", md: "20px", lg: "35px" } }}
-          ></ExploreIcon>
+          />
         </IconContainer>
       </Title>
     </MainTitleContainer>

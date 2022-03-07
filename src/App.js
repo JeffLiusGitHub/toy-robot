@@ -55,14 +55,11 @@ function App() {
 
   return (
     <div>
-      <MainTitlePage></MainTitlePage>
+      <MainTitlePage />
       <Container>
         <Left>
-          <IntroductionPage handleOpen={handleOpen}> </IntroductionPage>
-          <ModalContainer
-            open={open}
-            handleClose={handleClose}
-          ></ModalContainer>
+          <IntroductionPage handleOpen={handleOpen} />
+          <ModalContainer open={open} handleClose={handleClose} />
           <InputPage />
           <OutputPage />
         </Left>

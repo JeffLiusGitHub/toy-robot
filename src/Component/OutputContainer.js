@@ -34,8 +34,8 @@ const OutPutContainer = ({ title, color, messageArray }) => {
       <ErrorIcon sx={{ fontSize: "15px", mr: 1 }} />
     );
 
-  const Message = messageArray.map((message) => (
-    <OutputMessage color={color}>
+  const Message = messageArray.map((message,index) => (
+    <OutputMessage color={color} key={`${message}${index}`}>
       {icon}
       {message}
     </OutputMessage>

@@ -84,13 +84,15 @@ function InputPage() {
         <Campass />
       </TitleContainer>
       <Input
+        label="command-input"
+        data-testid="command-input"
         placeholder="Please type your command here..."
         value={inputValue.toUpperCase()}
         onChange={(event) => setInputValue(event.target.value.toUpperCase())}
         onKeyPress={(event) =>
           event.key === "Enter" ? runInputCommand(inputValue) : null
         }
-      ></Input>
+      />
     </InputPageContainer>
   );
 }

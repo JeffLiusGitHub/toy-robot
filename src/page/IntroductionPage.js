@@ -41,12 +41,13 @@ const IntroductionPage = ({ handleOpen }) => {
       <Content>Check the button to see more details.</Content>
       <ButtonContainer>
         <Button
+          data-testid="instruction"
           color="success"
           onClick={handleOpen}
           variant="contained"
           sx={{ backgroundColor: "#019267", fontWeight: 900 }}
         >
-          <HelpOutlineIcon sx={{ mr: "5px" }}></HelpOutlineIcon>
+          <HelpOutlineIcon sx={{ mr: "5px" }} />
           Instruction
         </Button>
       </ButtonContainer>

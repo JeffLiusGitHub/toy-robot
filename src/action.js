@@ -2,18 +2,11 @@ import { axisIsValid, facingIsValid } from "./validation";
 import { placeRobot, rotateRobot, moveRobot } from "./store/RobotSlice";
 import { setCommand, setError } from "./store/InfoSlice";
 
-export const place = (
-  dispatch,
-  inputCommand,
-  xLength,
-  yLength,
-  facingToward
-) => {
+export const place = (dispatch,inputCommand,xLength, yLength,facingToward) => {
   const inputValue = inputCommand.split(" ");
   if (inputValue[2]) {
     return dispatch(setError({ error: "do not add space before facing" }));
   }
-  console.log(inputCommand);
   if (inputValue[1] === undefined) {
     return dispatch(setError({ error: "please also enter axis and facing" }));
   }
@@ -47,8 +40,10 @@ export const place = (
 export const rotate = (dispatch, direction, facing, facingToward) => {
   const index = facingToward.indexOf(facing);
   if (!facingIsValid(dispatch, facing, facingToward)) {
-    return console.log("invalid facing");
+    return dispatch(setError({ error: "invalid facing" }));
   }
+  //LEFT means get current element and return the next element in the array
+  //if it is the last element in the array, return the first one
   if (direction === "LEFT") {
     if (index > 0) {
       facing = facingToward[index - 1];
@@ -62,7 +57,7 @@ export const rotate = (dispatch, direction, facing, facingToward) => {
       return;
     }
     if (index < 0) {
-      return console.log("saved facing got problem");
+      return dispatch(setError({ error: "saved facing got problem" }));
     }
   } else if (direction === "RIGHT") {
     if (index < facingToward.length - 1 && index >= 0) {

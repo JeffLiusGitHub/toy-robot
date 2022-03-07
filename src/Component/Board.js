@@ -26,7 +26,7 @@ const BoardContainer = styled.div`
 const Board = () => {
   const { axisX, axisY, facing } = useSelector((state) => state.robot);
   const { xLength, yLength } = useSelector((state) => state.board);
-  
+
   let board = [];
   for (let j = xLength - 1; j >= 0; j--) {
     for (let i = 0; i < yLength; i++) {
@@ -35,31 +35,17 @@ const Board = () => {
       if (i === axisX && j === axisY) {
         displayTurtle = true;
       }
-      if (number % 2 === 0) {
-        board.push(
-          <TileComponent
-            key={`${i},${j}`}
-            facing={facing}
-            color="#F8E2CF"
-            i={i}
-            j={j}
-            displayTurtle={displayTurtle}
-            xLength={xLength}
-          ></TileComponent>
-        );
-      } else {
-        board.push(
-          <TileComponent
-            facing={facing}
-            color="#f5c6aa"
-            i={i}
-            j={j}
-            displayTurtle={displayTurtle}
-            xLength={xLength}
-            key={`${i}.${j}`}
-          ></TileComponent>
-        );
-      }
+      board.push(
+        <TileComponent
+          key={`${i},${j}`}
+          facing={facing}
+          color={number % 2 === 0 ? "#F8E2CF" : "#f5c6aa"}
+          i={i}
+          j={j}
+          displayTurtle={displayTurtle}
+          xLength={xLength}
+        />
+      );
     }
   }
 

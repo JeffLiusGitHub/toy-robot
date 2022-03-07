@@ -50,7 +50,7 @@ const CompassContainer = styled.div`
 const Compass = () => {
   return (
     <CompassContainer>
-      <img src={compass} alt="Campass"></img>
+      <img src={compass} alt="Campass"/>
     </CompassContainer>
   );
 };
