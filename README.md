@@ -1,3 +1,7 @@
+# ABOUT
+
+This is a project based on React, Redux, styledComponent, and sort of MaterialUI. You can find the live demo in Open[https://toy-robot-simulator-69acb.web.app/] (https://toy-robot-simulator-69acb.web.app/). Run npm test to see the test implementation. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
